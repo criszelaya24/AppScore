@@ -1,5 +1,7 @@
+require 'pry'
 class SelectorController < ApplicationController
   def index
-    @test = "test"
+    @leagues = {}
+    @leagues = 
   end
 end
