@@ -16,22 +16,6 @@
   </head>
   <body>
     <h1>Hello, world!</h1>
-    <form mathod='get' action="/score">
-        <div class="form-group">
-            <label for="exampleFormControlSelect1">Example select</label>
-            <select name="league" class="form-control" id="exampleFormControlSelect1">
-    <% @leagues.each do |key, value|
-        if key === "competitions" 
-        value.each do |record|
-        %>
-            <option value=<%=record['id'] %>><%= record['name'] %></option>
-       <%
-       end
-        end 
-    end%>
-        </select>
-        </div>
-        <button>click me</button>
-    </form>
+    <%= @message %>
   </body>
 </html>
