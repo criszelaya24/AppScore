@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="row">
+        
+    </div>
+        <table class="table table-borderless table-dark">
+                <thead>
+                    <tr style="text-align: center;">
+                        <th scope="col">Season:</th>
+                        <th scope="col">Team:</th>
+                    </tr>
+                  <tr>
+                    <th scope="col">0-45 minutes (First Half)</th>
+                    <th scope="col">45-90 minutes (Second Half)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row"> <%= @total_score['firstHalf'] %></th>
+                    <td><%= @total_score['secondHalf'] %></td>
+                  </tr>
+                </tbody>
+              </table>
+</div>
