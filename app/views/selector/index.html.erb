@@ -2,7 +2,7 @@
     <form mathod='get' action="/score">
         <div class="form-group">
             <label for="exampleFormControlSelect1">Example select</label>
-            <select name="leagues" class="form-control" id="exampleFormControlSelect1">
+            <select name="leagueId" class="form-control" id="leagues">
     <% @leagues.each do |key, value|
         if key === "competitions" 
           value.each do |record|
@@ -12,6 +12,9 @@
           end
         end 
       end%>
+        </select>
+        <select id="teams" name="teamId" class="form-control" id="exampleFormControlSelect1">
+            <option id="team"></option>
         </select>
         </div>
         <button>click me</button>
