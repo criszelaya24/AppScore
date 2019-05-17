@@ -1,24 +1,34 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# AppScore :bomb:
 
-Things you may want to cover:
+## how to install? :point_down:
 
-* Ruby version
+```
+- Download this repo
+- Make sure to have installed ruby 2.6.2, if not install it first.
+- Run *bundle install*
+- Run *bundle exec figaro install*
+- Add a key as *API_TOKEN: "value"* into the file application.yml created with the last command
+- ready to go! (rails s)
+```
 
-* System dependencies
+## Objetives :palm_tree:
 
-* Configuration
+- Connect with an API of soccer and bring the data of goals by time acording with the selected team and league.
 
-* Database creation
 
-* Database initialization
+## Technologies :page_with_curl:
 
-* How to run the test suite
+```
+- Boostrap
+- Jquery
+- Ruby on rails
+- figaro
+- Heroku CLI
+- css
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+## URL live? :octocat:
 
-* Deployment instructions
-
-* ...
+- [AppScore](https://auth0.com/blog/react-tutorial-building-and-securing-your-first-app/)
