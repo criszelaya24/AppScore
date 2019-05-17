@@ -1,23 +1,28 @@
 <div class="container">
-    <div class="row">
-        
+    <div>
+        <h1><span class="badge badge-secondary">Result of goals by time!</span></h1>
     </div>
-        <table class="table table-borderless table-dark">
-                <thead>
-                    <tr style="text-align: center;">
-                        <th scope="col">Season:</th>
-                        <th scope="col">Team:</th>
-                    </tr>
-                  <tr>
-                    <th scope="col">0-45 minutes (First Half)</th>
-                    <th scope="col">45-90 minutes (Second Half)</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th scope="row"> <%= @total_score['firstHalf'] %></th>
-                    <td><%= @total_score['secondHalf'] %></td>
-                  </tr>
-                </tbody>
-              </table>
+    <div>
+        <table class="table table-hover table-dark">
+            <thead>
+              <tr style="text-align: center;">
+                <th scope="col">Season: <%= @season %></th>
+                <th scope="col">Team: <%= @team_name %></th>
+              </tr>
+              <tr>
+                <th scope="col">0-45 minutes (First Half)</th>
+                <th scope="col">45-90 minutes (Second Half)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td> <%= @total_score['firstHalf'] %></td>
+                <td><%= @total_score['secondHalf'] %></td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+</div>
+<div class="banner">
+    <%= image_tag("soccer.jpg", :alt => "rss feed") %>
 </div>
