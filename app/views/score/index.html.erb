@@ -1,7 +1,15 @@
 <div class="container">
-    <div>
-        <h1><span class="badge badge-secondary">Result of goals by time!</span></h1>
+ <% if flash[:notice] %>
+ <div class="centered">
+    <h1><span class="badge badge-secondary"><%= flash[:notice]%></span></h1>
+    <div class="banner">
+        <%= image_tag("error.jpg", :alt => "rss feed") %>
     </div>
+</div>
+<% else %>
+<div>
+        <h1><span class="badge badge-secondary">Result of goals by time!</span></h1>
+</div>
     <div>
         <table class="table table-hover table-dark">
             <thead>
@@ -22,7 +30,12 @@
             </tbody>
           </table>
     </div>
+    <div>
+      <% @total_score['firstHalf'] > @total_score['secondHalf'] ? @message = "First half it's on fire!" : @message = "Second half it's on fire!" %>
+        <h1><span class="badge badge-secondary"><%= @message %></span></h1>
+      </div>
 </div>
 <div class="banner">
     <%= image_tag("soccer.jpg", :alt => "rss feed") %>
 </div>
+<% end %>
