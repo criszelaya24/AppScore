@@ -9,12 +9,16 @@ class ScoreController < ApplicationController
     # get params
     @league = params['leagueId']
     @team_id = params['teamId']
-    @filter = get_by_season
-    @data = RestClient.get(URL + @league + @filter, headers = {accept: :json,'X-Auth-Token' => ENV['API_TOKEN']})
-    @data_parse = JSON.parse(@data)
-    @total_score['firstHalf'], @total_score['secondHalf'], @team_name = get_scores(@data_parse, @team_id)
+    if @team_id != ''
+      flash[:notice] = nil
+      @filter = get_by_season
+      @data = RestClient.get(URL + @league + @filter, headers = {accept: :json,'X-Auth-Token' => ENV['API_TOKEN']})
+      @data_parse = JSON.parse(@data)
+      @total_score['firstHalf'], @total_score['secondHalf'], @team_name = get_scores(@data_parse, @team_id)
+    else
+      flash[:notice] = "You must choose a team!"
+    end
   end
-
   private
 
   def get_by_season(year = LAST_SEASON)
