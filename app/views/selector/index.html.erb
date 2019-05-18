@@ -1,26 +1,42 @@
-<div class="container centered">
-    <div>
-      <h1>Start your search!</h1>
-    </div>
-    <div>
-        <form mathod='get' action="/score">
-          <div class="form-group">
-              <label for="exampleFormControlSelect1">Select a league:</label>
-              <select name="leagueId" class="form-control" id="leagues">
-      <% @leagues.each do |key, value|
-          if key === "competitions" 
-            value.each do |record|
-          %>
+<div class="s-layout">
+  <!-- Sidebar -->
+  <div class="s-layout__sidebar">
+    <a class="s-sidebar__trigger" href="#0">
+       <center><p>Welcome to AppScore</p></center>
+    </a>
+
+    <nav class="s-sidebar__nav">
+      <ul>
+        <p>"Welcome to AppSoccer"</p>
+        <p>..when you find the information of goals yours favorite team for the half time o all the time .</p>
+
+      </ul>
+
+    </nav>
+  </div>
+  <!-- Content -->
+  <main class="s-layout__content">
+    <div class="container centered">
+      <form mathod='get' action="/score">
+        <div class="form-group">
+          <label for="exampleFormControlSelect1">Select your favorite Team</label>
+          <select name="leagueId" class="form-control" id="leagues">
+         <% @leagues.each do |key, value|
+            if key === "competitions"
+              value.each do |record|
+              %>
               <option value=<%=record['id'] %>><%= record['name'] %></option>
-         <%
+              <%
             end
-          end 
+          end
         end%>
           </select>
           <select id="teams" name="teamId" class="form-control" id="exampleFormControlSelect1">
+            <option id="team"></option>
           </select>
-          </div>
-          <button class="btn btn-dark">Search</button>
+        </div>
+        <button>click me</button>
       </form>
     </div>
+  </main>
 </div>
